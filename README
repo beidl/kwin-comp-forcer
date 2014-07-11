@@ -1,0 +1,18 @@
+KWin-Comp-Forcer: Disable KWin compositing based on your secondary NVidia card.
+-------------------------------------------------------------------------------
+
+KWin doesn't suspend compositing for full screen windows on Intel GPUs.
+That's a bummer for bumblebee users with a secondary NVidia card.
+
+This tool periodically checks the state of your NVidia card and toggles KWin 
+compositing via d-bus, based on whether you are using the secondary GPU or not.
+This requires a fully working bbswitch/bumblebee installation to work.
+
+-------------------------------------------------------------------------------
+
+usage: ./kwin-comp-forcer [options]
+
+options:
+    -h:            This help
+    -r:            Reset KWin compositing on start
+    -t TIME:       Set polling interval to TIME in seconds (default: 5)
